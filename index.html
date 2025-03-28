@@ -19,47 +19,46 @@
             scroll-behavior: smooth;
         }
         .topbar {
-            width: 100%;
-            display: flex;
-            align-items: center; /* Ensures all items are vertically aligned */
-            justify-content: center;
-            gap: 40px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 15px 20px; /* Adjust padding for better alignment */
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-        .topbar a {
-            display: inline-flex; /* Ensures uniform height */
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 500;
-            transition: 0.3s;
-            padding: 10px 15px;
-            height: 40px; /* Ensures all items are the same height */
-        }
-        .topbar a:hover {
-            color: #E63946;
-        }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow for better visibility */
+}
+
+.topbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.topbar a:hover {
+    color: #E63946;
+}
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #E63946; /* Red background */
-            color: white; /* White text */
+            background: #E63946;
+            color: white;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             transition: background 0.3s ease-in-out;
             border: none;
-            height: 40px; /* Match height with other navbar links */
+            height: 40px;
         }
         .btn:hover {
             background: white;
@@ -172,6 +171,7 @@
         <a href="./index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html#contact-section">Contact</a>
+        <div class="container">
     </nav>
     
     <section class="hero">
@@ -193,9 +193,9 @@
     </section>
     
     <footer>
-        <p>&copy; 2025 Adrian Rey Panganiban | <a href="mailto:adrianpanganiban292@gmail.com">Email Me</a></p>
+        <p>&copy; 2025 Adrian Rey Panganiban | <a href="mailto:adrianreyasr@gmail.com">Email Me</a></p>
         <p>Follow me: 
-            <a href="https://x.com/Azurii0_0" target="_blank">Twitter</a> | 
+            <a href="https://twitter.com/adrianpanganiban" target="_blank">Twitter</a> | 
             <a href="https://www.linkedin.com/in/adrianpanganiban" target="_blank">LinkedIn</a>
         </p>
     </footer>
