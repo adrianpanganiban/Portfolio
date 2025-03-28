@@ -138,7 +138,7 @@
         emailjs.init("tsk_QT4H4zu8-S4eT");
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+    event.preventDefault();  // Prevent the page from refreshing
 
     let isValid = true;
     let name = document.getElementById("name").value.trim();
@@ -179,13 +179,13 @@ document.getElementById("contact-form").addEventListener("submit", function(even
             .then(function(response) {
                 statusMessage.innerText = "Message sent successfully!";
                 statusMessage.style.color = "green"; // Success message in green
-                document.getElementById("contact-form").reset();
             }, function(error) {
                 statusMessage.innerText = "Failed to send message. Try again later.";
                 statusMessage.style.color = "red"; // Error message in red
             });
     }
 });
+
 
     </script>
 
