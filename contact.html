@@ -12,7 +12,11 @@
             font-family: 'Poppins', sans-serif;
             background: #0D0D0D;
             color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Ensures the body takes full height */
         }
+
         .topbar {
             width: 100%;
             display: flex;
@@ -26,6 +30,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
         }
+
         .topbar a {
             text-decoration: none;
             color: #fff;
@@ -34,9 +39,11 @@
             transition: 0.3s;
             padding: 10px;
         }
+
         .topbar a:hover {
             color: #E63946;
         }
+
         .container {
             width: 90%;
             max-width: 500px;
@@ -46,15 +53,19 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             text-align: center;
             margin: 120px auto 50px;
+            flex-grow: 1; /* Ensures the container takes up remaining space */
         }
+
         h2 {
             margin-bottom: 20px;
         }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         input, textarea {
             width: 100%;
             padding: 12px;
@@ -65,6 +76,7 @@
             color: white;
             font-size: 16px;
         }
+
         .btn {
             background: #E63946;
             color: white;
@@ -77,29 +89,55 @@
             transition: 0.3s;
             margin-top: 10px;
         }
+
         .btn:hover {
             background: white;
             color: #E63946;
         }
+
         .social-links {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
+
         .social-links a {
             color: white;
             font-size: 30px;
             transition: 0.3s;
         }
+
         .social-links a:hover {
             color: #E63946;
         }
+
         .error {
             color: #E63946;
             font-size: 14px;
             margin-top: 5px;
         }
+
+        /* Footer Styles */
+        footer {
+            width: 100%;
+            background: #1A1A1A;
+            color: #bbb;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: auto; /* Pushes the footer to the bottom */
+        }
+
+        footer a {
+            color: #E63946;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
     </style>
 </head>
 <body>
@@ -128,66 +166,71 @@
 
         <div class="social-links">
             <a href="https://discord.com/users/w3b_3adrian" target="_blank"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://github.com/adrianpanganiban" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/adrianrey123asdfz" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="mailto:adrianpanganiban292@gmail.com"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://www.facebook.com/adrianrey.panganiban" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </div>
 
     <script>
-       emailjs.init("tsk_QT4H4zu8-S4eT");  // Your EmailJS User ID
+        emailjs.init("tsk_QT4H4zu8-S4eT");
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevent the page from reloading when the form is submitted
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-    let isValid = true;
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
+            let isValid = true;
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
 
-    let nameError = document.getElementById("name-error");
-    let emailError = document.getElementById("email-error");
-    let messageError = document.getElementById("message-error");
-    let statusMessage = document.getElementById("status-message");
+            let nameError = document.getElementById("name-error");
+            let emailError = document.getElementById("email-error");
+            let messageError = document.getElementById("message-error");
+            let statusMessage = document.getElementById("status-message");
 
-    // Reset error messages and status message
-    nameError.innerText = "";
-    emailError.innerText = "";
-    messageError.innerText = "";
-    statusMessage.innerText = "";
+            // Reset error messages and status message
+            nameError.innerText = "";
+            emailError.innerText = "";
+            messageError.innerText = "";
+            statusMessage.innerText = "";
 
-    // Validation
-    if (name === "") {
-        nameError.innerText = "Name cannot be empty.";
-        isValid = false;
-    }
-    if (email === "" || !email.includes("@")) {
-        emailError.innerText = "Please enter a valid email.";
-        isValid = false;
-    }
-    if (message === "") {
-        messageError.innerText = "Message cannot be empty.";
-        isValid = false;
-    }
+            // Validation
+            if (name === "") {
+                nameError.innerText = "Name cannot be empty.";
+                isValid = false;
+            }
+            if (email === "" || !email.includes("@")) {
+                emailError.innerText = "Please enter a valid email.";
+                isValid = false;
+            }
+            if (message === "") {
+                messageError.innerText = "Message cannot be empty.";
+                isValid = false;
+            }
 
-    // If valid, send the email
-    if (isValid) {
-        statusMessage.innerText = "Sending message...";
+            // If valid, send email
+            if (isValid) {
+                // Display a loading status message
+                statusMessage.innerText = "Sending message...";
 
-        // Use EmailJS to send the form
-        emailjs.sendForm("service_py9ads3", "template_gjm0ys4", this)
-            .then(function(response) {
-                statusMessage.innerText = "Message sent successfully!";
-                statusMessage.style.color = "green";  // Show success message
-            }, function(error) {
-                statusMessage.innerText = "Failed to send message. Try again later.";
-                statusMessage.style.color = "red";  // Show error message
-            });
-    }
-});
-
-
+                emailjs.sendForm("service_py9ads3", "template_gjm0ys4", this)
+                    .then(function(response) {
+                        statusMessage.innerText = "Message sent successfully!";
+                        statusMessage.style.color = "green"; // Success message in green
+                        document.getElementById("contact-form").reset();
+                    }, function(error) {
+                        statusMessage.innerText = "Failed to send message. Try again later.";
+                        statusMessage.style.color = "red"; // Error message in red
+                    });
+            }
+        });
     </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Created by Adrian Rey Panganiban. <a href="https://www.linkedin.com/in/adrianreypanganiban" target="_blank">LinkedIn</a> | <a href="https://github.com/adrianreyp" target="_blank">GitHub</a></p>
+        <p>&copy; 2025 All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
