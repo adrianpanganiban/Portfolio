@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <meta name="description" content="Portfolio of Adrian Rey Panganiban, Community Moderator and Web Developer.">
+    <meta name="keywords" content="Adrian Rey Panganiban, Portfolio, Community Moderator, Web Developer, IoT, Software Developer">
+    <meta name="author" content="Adrian Rey Panganiban">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -109,6 +112,8 @@
         }
         .project:hover {
             transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .project img {
             width: 100%;
@@ -145,13 +150,28 @@
                 width: 30%;
             }
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: white;
+        }
+        footer a {
+            color: #E63946;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-     <nav class="topbar">
-        <a href="/Portfolio/" id="home-link">Home</a>
-        <a href="/Portfolio/about.html">About</a>
-        <a href="/Portfolio/contact.html#contact-section">Contact</a>
+    <nav class="topbar">
+        <a href="./index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html#contact-section">Contact</a>
     </nav>
     
     <section class="hero">
@@ -168,10 +188,18 @@
             <div class="project"><img src="images/ClashofCoins.png" alt="Clash of Coins"><h3>Clash of Coins</h3><h4>Moderator</h4></div>
             <div class="project"><img src="images/monai.png" alt="MONAI"><h3>MONAI</h3><h4>Community Moderator & Contributor</h4></div>
             <div class="project"><img src="images/Banners1.png" alt="Event Banners"><h3>Event Banners</h3><h4>Photoshop, Canva, Illustrator, etc</h4></div>
-            <div class="project"><img src="images/IOT.png" alt="Event Moderation"><h3>IoT & Software Developer</h3><h4>IoT-based Smart Egg Incubator Monitoring System</h4></div>
+            <div class="project"><img src="images/IOT.png" alt="IoT Project"><h3>IoT & Software Developer</h3><h4>IoT-based Smart Egg Incubator Monitoring System</h4></div>
         </div>
     </section>
     
+    <footer>
+        <p>&copy; 2025 Adrian Rey Panganiban | <a href="mailto:adrianreyasr@gmail.com">Email Me</a></p>
+        <p>Follow me: 
+            <a href="https://twitter.com/adrianpanganiban" target="_blank">Twitter</a> | 
+            <a href="https://www.linkedin.com/in/adrianpanganiban" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
@@ -185,6 +213,7 @@
                 autoplaySpeed: 2000,
             });
         });
+
         document.addEventListener("DOMContentLoaded", function() {
             gsap.from(".hero-text h1", { opacity: 0, y: 50, duration: 1, ease: "power3.out" });
             gsap.from(".hero-text p", { opacity: 0, y: 50, duration: 1, delay: 0.3, ease: "power3.out" });
