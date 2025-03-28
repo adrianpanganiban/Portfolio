@@ -135,10 +135,10 @@
     </div>
 
     <script>
-        emailjs.init("tsk_QT4H4zu8-S4eT");
+       emailjs.init("tsk_QT4H4zu8-S4eT");  // Your EmailJS User ID
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevent the page from refreshing
+    event.preventDefault();  // Prevent the page from reloading when the form is submitted
 
     let isValid = true;
     let name = document.getElementById("name").value.trim();
@@ -170,18 +170,18 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         isValid = false;
     }
 
-    // If valid, send email
+    // If valid, send the email
     if (isValid) {
-        // Display a loading status message
         statusMessage.innerText = "Sending message...";
 
+        // Use EmailJS to send the form
         emailjs.sendForm("service_py9ads3", "template_gjm0ys4", this)
             .then(function(response) {
                 statusMessage.innerText = "Message sent successfully!";
-                statusMessage.style.color = "green"; // Success message in green
+                statusMessage.style.color = "green";  // Show success message
             }, function(error) {
                 statusMessage.innerText = "Failed to send message. Try again later.";
-                statusMessage.style.color = "red"; // Error message in red
+                statusMessage.style.color = "red";  // Show error message
             });
     }
 });
