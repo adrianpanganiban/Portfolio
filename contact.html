@@ -14,7 +14,7 @@
             color: white;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Ensures the body takes full height */
+            height: 100vh;
         }
 
         .topbar {
@@ -29,6 +29,7 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .topbar a {
@@ -53,7 +54,9 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             text-align: center;
             margin: 120px auto 50px;
-            flex-grow: 1; /* Ensures the container takes up remaining space */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Slide from the bottom */
+            animation: fadeInUp 1s forwards; /* Apply the animation */
         }
 
         h2 {
@@ -125,7 +128,7 @@
             color: #bbb;
             padding: 30px 0;
             text-align: center;
-            margin-top: auto; /* Pushes the footer to the bottom */
+            margin-top: auto;
         }
 
         footer a {
@@ -138,6 +141,17 @@
             font-size: 14px;
         }
 
+        /* Animation Styles */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,7 +180,7 @@
 
         <div class="social-links">
             <a href="https://discord.com/users/w3b_3adrian" target="_blank"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://github.com/adrianrey123asdfz" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/adrianpanganiban" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="mailto:adrianpanganiban292@gmail.com"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://www.facebook.com/adrianrey.panganiban" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
